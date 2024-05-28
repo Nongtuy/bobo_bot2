@@ -1,0 +1,27 @@
+<launch>
+    <!-- Launch empty Gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+    <!-- Spawn URDF model into Gazebo -->
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find robot_1)/urdf/robot_1.urdf -urdf -model robot_1" output="screen"/>
+
+    <!-- Publish fake joint calibration -->
+    <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true"/>
+
+    <!-- Load URDF into parameter server -->
+    <param name="robot_description" textfile="$(find robot_1)/urdf/robot_1.urdf"/>
+    <!--///////////////////////////////////////////////-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <param name="publish_frequency" value="10"/>
+    </node>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <param name="rate" value="10"/>
+    </node>
+    <!--controller_node-->
+    <node name="base_controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller velocity_controller"/>
+    <!--robot_state_publisher-->
+    <node name="base_controller_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    </node>
+    <!-- Launch RViz with configuration -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_1)/config/robot_1.rviz"/>
+</launch>

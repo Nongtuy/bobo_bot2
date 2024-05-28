@@ -1,0 +1,2 @@
+movement_used:robot_1:rplidar_ros:sensor_node:teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/tongthai/bobo_bot/devel -DCMAKE_INSTALL_PREFIX=/home/tongthai/bobo_bot/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/tongthai/bobo_bot/install
+
+Name: robot_1
+Description: Description of robot_1
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/tongthai/bobo_bot/install
+
+Name: movement_used
+Description: Description of movement_used
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

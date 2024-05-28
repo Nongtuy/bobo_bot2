@@ -1,0 +1,8 @@
+prefix=/home/tongthai/small_robot_command_ws/devel
+
+Name: diff_drive
+Description: Description of diff_drive
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

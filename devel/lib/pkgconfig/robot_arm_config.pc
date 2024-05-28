@@ -1,0 +1,8 @@
+prefix=/home/tongthai/small_robot_command_ws/devel
+
+Name: robot_arm_config
+Description: Description of robot_arm_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

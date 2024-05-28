@@ -1,0 +1,8 @@
+prefix=/home/tongthai/bobo_bot/devel
+
+Name: sensor_node
+Description: Description of sensor_node
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

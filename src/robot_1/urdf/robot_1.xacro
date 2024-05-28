@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_1">
+
+  <!-- Define macros for commonly used values -->
+  <xacro:property name="mesh_path" value="package://robot_1/meshes/"/>
+
+  <!-- Define macros for link visual and collision properties -->
+  <xacro:macro name="link_properties" params="link_name mesh_file">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.0853884883245706"/>
+      <inertia ixx="2.58181109779992E-05" ixy="0" ixz="0" iyy="2.58181109779992E-05" iyz="0" izz="3.81728954311654E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${mesh_path}${mesh_file}.STL"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="${mesh_path}${mesh_file}.STL"/>
+      </geometry>
+    </collision>
+  </xacro:macro>
+
+  <!-- Define the base link -->
+  <xacro:macro name="base_link">
+    <link name="base_link">
+      <!-- Include link properties macro -->
+      <xacro:link_properties link_name="base_link" mesh_file="base_link"/>
+    </link>
+    <!-- Define joint with base_footprint -->
+    <joint name="base_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <axis xyz="0.0 0.0 0.0"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define other links and joints -->
+  <xacro:macro name="front_left_link">
+    <link name="Front_Left">
+      <!-- Include link properties macro -->
+      <xacro:link_properties link_name="Front_Left" mesh_file="Front_Left"/>
+    </link>
+    <!-- Define joint -->
+    <joint name="FrontLeft" type="continuous">
+      <origin xyz="0.056 0.13 -0.06" rpy="-1.5707963267949 0 0"/>
+      <parent link="base_link"/>
+      <child link="Front_Left"/>
+      <axis xyz="0 0 -1"/>
+      <limit effort="10" velocity="10"/>
+      <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define other links and joints -->
+  <xacro:macro name="back_left_link">
+    <link name="Back_Left">
+      <!-- Include link properties macro -->
+      <xacro:link_properties link_name="Back_Left" mesh_file="Back_Left"/>
+    </link>
+    <!-- Define joint -->
+    <joint name="BackLeft" type="continuous">
+      <origin xyz="-0.056 0.13 -0.06" rpy="-1.5707963267949 0 0"/>
+      <parent link="base_link"/>
+      <child link="Back_Left"/>
+      <axis xyz="0 0 -1"/>
+      <limit effort="10" velocity="10"/>
+      <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define other links and joints -->
+  <xacro:macro name="front_right_link">
+    <link name="Front_Right">
+      <!-- Include link properties macro -->
+      <xacro:link_properties link_name="Front_Right" mesh_file="Front_Right"/>
+    </link>
+    <!-- Define joint -->
+    <joint name="FrontRight" type="continuous">
+      <origin xyz="0.056 -0.13 -0.06" rpy="-1.5708 0 0"/>
+      <parent link="base_link"/>
+      <child link="Front_Right"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10" velocity="10"/>
+      <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Define other links and joints -->
+  <xacro:macro name="back_right_link">
+    <link name="Back_Right">
+      <!-- Include link properties macro -->
+      <xacro:link_properties link_name="Back_Right" mesh_file="Back_Right"/>
+    </link>
+    <!-- Define joint -->
+    <joint name="BackRight" type="continuous">
+      <origin xyz="-0.056 -0.13 -0.06" rpy="-1.5707963267949 0 0"/>
+      <parent link="base_link"/>
+      <child link="Back_Right"/>
+      <axis xyz="0 0 1"/>
+      <limit effort="10" velocity="10"/>
+      <dynamics damping="0.1" friction="0.1"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- Call macros to define links and joints -->
+  <base_link/>
+  <front_left_link/>
+  <back_left_link/>
+  <front_right_link/>
+  <back_right_link/>
+
+</robot>
