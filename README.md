@@ -1,10 +1,10 @@
 # small_robot_command_ws
 Project focuses on communication between multiple robots.
-Clone Najaaaa
+# Clone Najaaaa
 
 ```git clone https://github.com/Nongtuy/bobo_bot2.git```
 
-source workspace
+# source workspace
 
 ```cd bobo_bot2```
 
