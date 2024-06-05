@@ -12,10 +12,8 @@ The robot's main systems are:
  2.1 Speaker.py This will be used to test communication for multimachine operation
  ```rosrun Communication_test Speaker.py```
 ## 3. movement_used
-    Folder [sketch_apr26a] is cpp arduino based, for low-level control.
-    Both Turtlebot3_teleop and teleop_twist_keyboard can be used but   depend on hardwares behavior
-    high_level_type_3_2.py is the main high-level code. In order to use this code Lidar sensor must be activated.
-    command to be used
+Folder [sketch_apr26a] is cpp arduino based, for low-level control. Both Turtlebot3_teleop and teleop_twist_keyboard can be used but   depend on hardwares behavior. high_level_type_3_2.py is the main high-level code. In order to use this code Lidar sensor must be activated.
+command to be used
     
     ```rosrun movement_used high_level_type_3_2.py``` 
 ## 4. robot_1
