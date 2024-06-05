@@ -9,7 +9,7 @@ The robot's main systems are:
 # Packages
 ## 1. Obstacle_Avoidance-ROS
 ## 2. Communication_test
-## 2.1 Speaker.py This will be used to test communication for multimachine operation
+ 2.1 Speaker.py This will be used to test communication for multimachine operation
     ```rosrun Communication_test Speaker.py
 ## 3. movement_used
     Folder "sketch_apr26a" is cpp arduino based, for low-level control.
