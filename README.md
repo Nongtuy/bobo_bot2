@@ -1,4 +1,4 @@
-# small_robot_command_ws
+# bobo_bot2
 Project focuses on communication between multiple robots.
 #### Clone Najaaaa
 
