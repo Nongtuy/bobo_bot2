@@ -7,6 +7,7 @@ Clone Najaaaa
 source workspace
 
 ```cd bobo_bot2```
+
 ```source devel/setup.bash```
 # Systems
 The robot's main systems are:
