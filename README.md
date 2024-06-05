@@ -28,7 +28,7 @@ command to be used
 ## 4. robot_1
 Robot_1 is simulation based on rviz and gazebo to test deff-drive
 ##### Note: Flip robot back before using
-    ```roslauch robot_1 gazebo.launch```
+```roslauch robot_1 gazebo.launch```
 ## 5. rospy(Repair Package during development)
 
 ## 6. sensor_node
