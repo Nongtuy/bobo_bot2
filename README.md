@@ -39,7 +39,7 @@ Use for manual control
 
  ```rosrun teleop_twist_keyboard```
  # How To Use??????????
-This package is made on Rpi 4 B to arduino to control the robot. You need to upload sketch_apr26a to your arduino board. Topics can be added for more complex robot. 
+This package is made for Rpi 4 B connected to arduino to control the robot. You need to upload sketch_apr26a to your arduino board. Topics can be added for more complex robot. 
 
 Login SSH to Rpi board then.
 
